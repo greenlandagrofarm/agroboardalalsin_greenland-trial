@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>AGROBOARD ALSIN-Greenland Trial</title>
+
+    <meta property="og:title" content="AGROBOARD ALSIN-Greenland Trial">
+    <meta property="og:description" content="Webapp Manajemen Alat & Mesin Pertanian Profesional.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://github.com/greenlandagrofarm/agroboardalalsin_greenland-trial/">
+    <meta property="og:image" content="https://i.ibb.co.com/MyHfydk5/alsin.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Mengatur agar aplikasi benar-benar full layar tanpa margin */
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: #ffffff;
+        }
+
+        /* Memaksa iframe memenuhi layar */
+        iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            border: none;
+            display: block;
+        }
+
+        /* Loader Emerald Green Agroboard */
+        #loader {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #064E3B; /* Warna Hijau Utama */
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        
+        .loading-text {
+            color: #064E3B; /* Warna Hijau Utama */
+            font-family: sans-serif;
+            font-weight: 800;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="loader">
+        <div class="spinner"></div>
+        <div class="loading-text">MEMUAT AGROBOARD... MOHON TUNGGU...Silahkan Refresh Jika Koneksi Terputus</div>
+    </div>
+    
+    <iframe 
+        src="https://script.google.com/macros/s/AKfycbz5iSXZM09kJXm8CyOegMAAP0jUCtu-ZJ69A-AOjFhti3f0uEFr7E5Pj7EeRO7QM8IJ2g/exec" 
+        onload="document.getElementById('loader').style.display='none';">
+    </iframe>
+
+</body>
+</html>
